@@ -27,9 +27,10 @@ const { activePage = '' } = Astro.props;
       </li>
       <li><a class:list={['nav-link', { active: activePage === 'industries' }]} href="/industries">Industries</a></li>
       <li>
-        <a class:list={['nav-link', { active: ['about', 'careers', 'case-studies', 'blog'].includes(activePage) }]} href="#">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class=""><path d="m6 9 6 6 6-6"/></svg></a>
+        <a class:list={['nav-link', { active: ['about', 'careers', 'case-studies', 'blog', 'founders'].includes(activePage) }]} href="#">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class=""><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="mega">
           <a href="/about"><strong>About Us</strong><span>Our story, mission & leadership</span></a>
+          <a href="/founders"><strong>Founders</strong><span>Meet the experts behind AuditVerse AI</span></a>
           <a href="/careers"><strong>Careers</strong><span>Join the AuditVerse AI team</span></a>
           <a href="/case-studies"><strong>Case Studies</strong><span>Real client transformations</span></a>
           <a href="/blog"><strong>Insights & Blog</strong><span>Articles on AI, audit & automation</span></a>
@@ -51,11 +52,11 @@ const { activePage = '' } = Astro.props;
     <a href="/" class="brand"><img src="/icon.png" width="26" height="26" alt="AuditVerse AI"><span class="brand-word" style="display:block">AuditVerse<b>AI</b></span></a>
     <button id="mm-close" class="mm-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class=""><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
   </div>
-  <a href="/">Home</a>
-  <div class="mm-group"><a href="#" onclick="return false;">Services</a><div class="mm-sub"><a href="/ai-automation">AI Automation</a><a href="/erp-automation">ERP Automation</a><a href="/internal-audit">Internal Audit</a><a href="/accounting-bookkeeping">Accounting & Bookkeeping</a><a href="/bi-dashboards">BI Dashboards</a></div></div>
-  <a href="/industries">Industries</a>
-  <div class="mm-group"><a href="#" onclick="return false;">Company</a><div class="mm-sub"><a href="/about">About Us</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a></div></div>
-  <a href="/pricing">Pricing</a>
-  <a href="/contact">Contact</a>
+  <a href="/" class:list={{ active: activePage === 'home' }}>Home</a>
+  <div class="mm-group"><a href="#" onclick="return false;" class:list={{ active: ['ai-automation', 'erp-automation', 'internal-audit', 'accounting-bookkeeping', 'bi-dashboards'].includes(activePage) }}>Services</a><div class="mm-sub"><a href="/ai-automation">AI Automation</a><a href="/erp-automation">ERP Automation</a><a href="/internal-audit">Internal Audit</a><a href="/accounting-bookkeeping">Accounting & Bookkeeping</a><a href="/bi-dashboards">BI Dashboards</a></div></div>
+  <a href="/industries" class:list={{ active: activePage === 'industries' }}>Industries</a>
+  <div class="mm-group"><a href="#" onclick="return false;" class:list={{ active: ['about', 'careers', 'case-studies', 'blog', 'founders'].includes(activePage) }}>Company</a><div class="mm-sub"><a href="/about">About Us</a><a href="/founders">Founders</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a></div></div>
+  <a href="/pricing" class:list={{ active: activePage === 'pricing' }}>Pricing</a>
+  <a href="/contact" class:list={{ active: activePage === 'contact' }}>Contact</a>
   <a href="/contact" class="btn btn-gold btn-block" style="margin-top:22px;">Book Free Consultation</a>
 </div>

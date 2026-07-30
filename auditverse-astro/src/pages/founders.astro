@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FounderCard from '../components/FounderCard.astro';
+
+const zaidSocials = [
+  { icon: 'linkedin', url: 'https://linkedin.com/in/ranamuhammadzaid' },
+  { icon: 'github', url: 'https://github.com/ranamuhammadzaid' },
+  { icon: 'email', url: 'mailto:ranamuhammadzaid@gmail.com' },
+];
+const danishSocials = [
+  { icon: 'linkedin', url: 'https://linkedin.com/in/muhammaddanishazeem' },
+  { icon: 'email', url: 'mailto:danishazeemofficial@gmail.com' },
+];
+
+const zaidTags = [
+  'AI Automation','ERP Implementation','Odoo ERP','DevOps',
+  'Cloud Infrastructure','Linux','Docker','Jenkins','AWS',
+  'API Integration','Workflow Automation','Business Intelligence',
+];
+const danishTags = [
+  'External Audit','Internal Audit','Financial Reporting','IFRS',
+  'Bookkeeping','Budgeting','Forecasting','QuickBooks',
+  'Odoo ERP','Risk Assessment','Compliance','Power BI',
+];
+---
+
+<BaseLayout
+  title="Our Founders | AuditVerse AI"
+  description="Meet the founders behind AuditVerse AI — Rana Muhammad Zaid and Muhammad Danish Azeem, combining AI engineering with Chartered Accountancy expertise."
+  canonical="https://www.auditverseai.com/founders"
+  activePage="founders"
+>
+
+<section class="founders-hero on-dark">
+  <div class="hero-grid-lines"></div>
+  <div class="founders-gradient-bg"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="section-head center">
+      <div class="eyebrow center" style="justify-content:center;">Our Leadership</div>
+      <h1 class="headline" style="max-width:720px;margin:0 auto;">Meet the Experts Behind AuditVerse AI</h1>
+      <p class="lede" style="max-width:720px;margin:18px auto 0;font-size:17px;line-height:1.7;">
+        AuditVerse AI was founded by professionals with expertise in Chartered Accountancy, ERP implementation, AI automation, DevOps, and Digital Transformation. Together, we help businesses automate financial operations, streamline workflows, improve compliance, and build intelligent ERP solutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="founders-grid">
+      <FounderCard
+        image="/images/team/zaid.jpg"
+        name="Rana Muhammad Zaid"
+        position="Co-Founder &amp; AI / ERP Automation Engineer"
+        bio="Rana Muhammad Zaid is a Computer Science graduate specializing in AI automation, DevOps, ERP implementation, cloud infrastructure, and business process automation."
+        bio2="He has practical experience deploying enterprise applications using Docker, Jenkins, Linux, GitHub Actions, and AWS while implementing ERP solutions including Odoo for organizations. His focus is helping companies eliminate repetitive manual work through AI agents, workflow automation, intelligent dashboards, and scalable cloud infrastructure."
+        tags={zaidTags}
+        socials={zaidSocials}
+        delay={0.05}
+      />
+      <FounderCard
+        image="/images/team/danish.jpg"
+        name="Muhammad Danish Azeem"
+        position="Co-Founder &amp; Audit / Finance Consultant"
+        bio="Muhammad Danish Azeem is a CA Finalist with over four years of experience in Audit, Assurance, Financial Reporting, Internal Controls, ERP-based Accounting, and Financial Management."
+        bio2="He has worked with organizations across manufacturing, healthcare, education, FMCG, telecom, media, and trading industries while leading audit engagements, preparing financial statements, strengthening internal controls, and implementing finance best practices. His expertise bridges modern ERP systems with internationally accepted accounting standards to help businesses remain compliant, efficient, and financially transparent."
+        tags={danishTags}
+        socials={danishSocials}
+        delay={0.15}
+      />
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark" style="padding-top:0;">
+  <div class="wrap">
+    <div class="founders-quote reveal">
+      <div class="quote-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6l-2 6"/><path d="M21 11h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6l-2 6"/></svg>
+      </div>
+      <h2 class="headline" style="color:var(--white);">Technology meets Financial Excellence</h2>
+      <p style="font-size:16.5px;line-height:1.7;color:var(--white-dim);max-width:760px;margin:16px auto 0;">
+        By combining deep financial expertise with AI-powered automation and enterprise ERP implementation, AuditVerse AI delivers solutions that help organizations improve efficiency, strengthen compliance, and accelerate digital transformation.
+      </p>
+      <div class="quote-divider">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>

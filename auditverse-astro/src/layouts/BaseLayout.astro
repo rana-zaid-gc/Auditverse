@@ -63,13 +63,32 @@ const ogImage = `${siteUrl}/images/icon.png`;
       <img src="/images/icon.png" alt="AuditVerse AI logomark" width="28" height="28">
       <span class="brand-word">AuditVerse<b>AI</b></span>
     </a>
-    <ul class="nav-links"><li><a class="nav-link" href="/">Home</a></li><li>
-              <a class="nav-link" href="#">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-              <div class="mega"><a href="/ai-automation"><strong>AI Automation</strong><span>Bots, document AI & intelligent workflows</span></a><a href="/erp-automation"><strong>ERP Automation</strong><span>Odoo, SAP & NetSuite implementation</span></a><a href="/internal-audit"><strong>Internal Audit</strong><span>Risk-based assurance & controls testing</span></a><a href="/accounting-bookkeeping"><strong>Accounting & Bookkeeping</strong><span>Daily books, payroll & reporting</span></a><a href="/bi-dashboards"><strong>BI Dashboards</strong><span>Power BI & real-time KPI command centres</span></a></div>
-            </li><li><a class="nav-link" href="/industries">Industries</a></li><li>
-              <a class="nav-link" href="#">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-              <div class="mega"><a href="/about"><strong>About Us</strong><span>Our story, mission & leadership</span></a><a href="/careers"><strong>Careers</strong><span>Join the AuditVerse AI team</span></a><a href="/case-studies"><strong>Case Studies</strong><span>Real client transformations</span></a><a href="/blog"><strong>Insights & Blog</strong><span>Articles on AI, audit & automation</span></a></div>
-            </li><li><a class="nav-link" href="/pricing">Pricing</a></li><li><a class="nav-link" href="/contact">Contact</a></li></ul>
+    <ul class="nav-links">
+      <li><a class:list={['nav-link', { active: activePage === 'home' }]} href="/">Home</a></li>
+      <li>
+        <a class:list={['nav-link', { active: ['ai-automation', 'erp-automation', 'internal-audit', 'accounting-bookkeeping', 'bi-dashboards'].includes(activePage) }]} href="#">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="mega">
+          <a href="/ai-automation"><strong>AI Automation</strong><span>Bots, document AI & intelligent workflows</span></a>
+          <a href="/erp-automation"><strong>ERP Automation</strong><span>Odoo, SAP & NetSuite implementation</span></a>
+          <a href="/internal-audit"><strong>Internal Audit</strong><span>Risk-based assurance & controls testing</span></a>
+          <a href="/accounting-bookkeeping"><strong>Accounting & Bookkeeping</strong><span>Daily books, payroll & reporting</span></a>
+          <a href="/bi-dashboards"><strong>BI Dashboards</strong><span>Power BI & real-time KPI command centres</span></a>
+        </div>
+      </li>
+      <li><a class:list={['nav-link', { active: activePage === 'industries' }]} href="/industries">Industries</a></li>
+      <li>
+        <a class:list={['nav-link', { active: ['about', 'careers', 'case-studies', 'blog', 'founders'].includes(activePage) }]} href="#">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="mega">
+          <a href="/about"><strong>About Us</strong><span>Our story, mission & leadership</span></a>
+          <a href="/founders"><strong>Founders</strong><span>Meet the experts behind AuditVerse AI</span></a>
+          <a href="/careers"><strong>Careers</strong><span>Join the AuditVerse AI team</span></a>
+          <a href="/case-studies"><strong>Case Studies</strong><span>Real client transformations</span></a>
+          <a href="/blog"><strong>Insights & Blog</strong><span>Articles on AI, audit & automation</span></a>
+        </div>
+      </li>
+      <li><a class:list={['nav-link', { active: activePage === 'pricing' }]} href="/pricing">Pricing</a></li>
+      <li><a class:list={['nav-link', { active: activePage === 'contact' }]} href="/contact">Contact</a></li>
+    </ul>
     <div class="nav-cta">
       <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
       <a href="/contact" class="btn btn-gold btn-sm">Book Free Consultation</a>
@@ -83,7 +102,12 @@ const ogImage = `${siteUrl}/images/icon.png`;
     <a href="/" class="brand"><img src="/images/icon.png" width="26" height="26" alt="AuditVerse AI"><span class="brand-word" style="display:block">AuditVerse<b>AI</b></span></a>
     <button id="mm-close" class="mm-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
   </div>
-  <a href="/">Home</a><div class="mm-group"><a href="#" onclick="return false;">Services</a><div class="mm-sub"><a href="/ai-automation">AI Automation</a><a href="/erp-automation">ERP Automation</a><a href="/internal-audit">Internal Audit</a><a href="/accounting-bookkeeping">Accounting & Bookkeeping</a><a href="/bi-dashboards">BI Dashboards</a></div></div><a href="/industries">Industries</a><div class="mm-group"><a href="#" onclick="return false;">Company</a><div class="mm-sub"><a href="/about">About Us</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a></div></div><a href="/pricing">Pricing</a><a href="/contact">Contact</a>
+  <a href="/" class:list={{ active: activePage === 'home' }}>Home</a>
+  <div class="mm-group"><a href="#" onclick="return false;" class:list={{ active: ['ai-automation', 'erp-automation', 'internal-audit', 'accounting-bookkeeping', 'bi-dashboards'].includes(activePage) }}>Services</a><div class="mm-sub"><a href="/ai-automation">AI Automation</a><a href="/erp-automation">ERP Automation</a><a href="/internal-audit">Internal Audit</a><a href="/accounting-bookkeeping">Accounting & Bookkeeping</a><a href="/bi-dashboards">BI Dashboards</a></div></div>
+  <a href="/industries" class:list={{ active: activePage === 'industries' }}>Industries</a>
+  <div class="mm-group"><a href="#" onclick="return false;" class:list={{ active: ['about', 'careers', 'case-studies', 'blog', 'founders'].includes(activePage) }}>Company</a><div class="mm-sub"><a href="/about">About Us</a><a href="/founders">Founders</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a></div></div>
+  <a href="/pricing" class:list={{ active: activePage === 'pricing' }}>Pricing</a>
+  <a href="/contact" class:list={{ active: activePage === 'contact' }}>Contact</a>
   <a href="/contact" class="btn btn-gold btn-block" style="margin-top:22px;">Book Free Consultation</a>
 </div>
 
@@ -108,7 +132,7 @@ const ogImage = `${siteUrl}/images/icon.png`;
       </div>
       <div class="foot-col">
         <h5>Company</h5>
-        <a href="/about">About Us</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a>
+        <a href="/about">About Us</a><a href="/founders">Founders</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a>
         <a href="/industries">Industries</a>
       </div>
       <div class="foot-col">

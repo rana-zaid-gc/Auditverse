@@ -36,6 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const backTop = document.getElementById('back-top');
   if (backTop) backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
+  /* Marquee logo hover — zoom hovered logo, pause track */
+  const marqueeImgs = document.querySelectorAll('.marquee-logo-img');
+  if (marqueeImgs.length) {
+    marqueeImgs.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        img.classList.add('zoomed');
+        img.closest('.marquee-track').classList.add('paused');
+      });
+      img.addEventListener('mouseleave', () => {
+        img.classList.remove('zoomed');
+        img.closest('.marquee-track').classList.remove('paused');
+      });
+    });
+  }
+
   /* Reveal on scroll */
   const revealEls = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
   const io = new IntersectionObserver((entries) => {
@@ -116,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const data = Object.fromEntries(new FormData(contactForm));
-        const res = await fetch('http://localhost:3001/api/contact', {
+        const res = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
@@ -319,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
       waBody.scrollTop = waBody.scrollHeight;
       input.value = '';
       try {
-        await fetch('http://localhost:3001/api/whatsapp', {
+        await fetch('/api/whatsapp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: msg, source: 'WhatsApp Widget' }),
