@@ -450,7 +450,6 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:76px 
 .grid > .reveal-scale:nth-child(5){transition-delay:.25s;}
 .grid > .reveal-scale:nth-child(6){transition-delay:.3s;}
 
-.page-hero{padding:150px 0 90px;background:linear-gradient(180deg,var(--navy-950),var(--navy-900));position:relative;overflow:hidden;}
 .breadcrumb{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--white-dim);font-family:'IBM Plex Mono',monospace;margin-bottom:22px;}
 .breadcrumb a:hover{color:var(--teal-400);}
 
@@ -588,11 +587,13 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:76px 
 :root[data-theme="light"] .stat .num{color:var(--ink);}
 :root[data-theme="light"] .stat .lbl{color:var(--ink-dim);}
 :root[data-theme="light"] .price-card{background:var(--paper);border-color:rgba(10,20,50,.08);}
+:root[data-theme="light"] .price-card .cost{color:var(--ink);}
 :root[data-theme="light"] .price-card .cost .price-period{color:var(--ink-dim);}
 :root[data-theme="light"] .price-card.pop{box-shadow:0 0 40px -8px rgba(62,230,200,.2);}
 :root[data-theme="light"] .price-card--custom .btn{background:rgba(62,230,200,.08);color:var(--teal-500);}
 :root[data-theme="light"] .price-card--custom .btn:hover{color:#fff;}
 :root[data-theme="light"] .price-card .price-icon{background:rgba(62,230,200,.08);border-color:rgba(62,230,200,.2);}
+:root[data-theme="light"] .on-dark .list-check li{color:var(--ink-dim);}
 :root[data-theme="light"] footer{background:#fff;border-color:rgba(10,20,50,.08);color:var(--ink-dim);}
 :root[data-theme="light"] .foot-col h5{color:var(--ink);}
 :root[data-theme="light"] .foot-col a{color:var(--ink-dim);}
