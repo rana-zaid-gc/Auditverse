@@ -1,0 +1,170 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  activePage?: string;
+}
+
+const { title, description, canonical, activePage } = Astro.props;
+const siteUrl = 'https://www.auditverseai.com';
+const ogImage = `${siteUrl}/images/icon.png`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="keywords" content="AI audit software, ERP automation, Odoo automation, internal audit AI, accounting automation, CFO services, business intelligence dashboards, VAT compliance, ZATCA compliance, AuditVerse AI">
+<meta name="author" content="AuditVerse AI">
+{canonical && <link rel="canonical" href={canonical}>}
+<link rel="icon" type="image/png" href="/images/icon.png">
+<meta name="theme-color" content="#0A1229">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:url" content={canonical || `${siteUrl}/`}>
+<meta property="og:site_name" content="AuditVerse AI">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={ogImage}>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AuditVerse AI",
+  "url": "https://www.auditverseai.com",
+  "logo": "https://www.auditverseai.com/images/icon.png",
+  "founder": {"@type":"Person","name":"Danish Azeem"},
+  "description": "AI-powered audit, accounting, ERP automation and business intelligence company.",
+  "sameAs": ["https://www.linkedin.com/company/auditverseai","https://www.facebook.com/auditverseai"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<div id="loader"><div class="loader-mark"><svg viewBox="0 0 60 60"><circle class="loader-ring" cx="30" cy="30" r="26" fill="none" stroke="#3EE6C8" stroke-width="3" stroke-linecap="round"/></svg></div></div>
+
+<header id="site-header">
+  <div class="wrap nav-row">
+    <a href="/" class="brand">
+      <img src="/images/icon.png" alt="AuditVerse AI logomark" width="28" height="28">
+      <span class="brand-word">AuditVerse<b>AI</b></span>
+    </a>
+    <ul class="nav-links"><li><a class="nav-link" href="/">Home</a></li><li>
+              <a class="nav-link" href="#">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="mega"><a href="/ai-automation"><strong>AI Automation</strong><span>Bots, document AI & intelligent workflows</span></a><a href="/erp-automation"><strong>ERP Automation</strong><span>Odoo, SAP & NetSuite implementation</span></a><a href="/internal-audit"><strong>Internal Audit</strong><span>Risk-based assurance & controls testing</span></a><a href="/accounting-bookkeeping"><strong>Accounting & Bookkeeping</strong><span>Daily books, payroll & reporting</span></a><a href="/bi-dashboards"><strong>BI Dashboards</strong><span>Power BI & real-time KPI command centres</span></a></div>
+            </li><li><a class="nav-link" href="/industries">Industries</a></li><li>
+              <a class="nav-link" href="#">Company <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="mega"><a href="/about"><strong>About Us</strong><span>Our story, mission & leadership</span></a><a href="/careers"><strong>Careers</strong><span>Join the AuditVerse AI team</span></a><a href="/case-studies"><strong>Case Studies</strong><span>Real client transformations</span></a><a href="/blog"><strong>Insights & Blog</strong><span>Articles on AI, audit & automation</span></a></div>
+            </li><li><a class="nav-link" href="/pricing">Pricing</a></li><li><a class="nav-link" href="/contact">Contact</a></li></ul>
+    <div class="nav-cta">
+      <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+      <a href="/contact" class="btn btn-gold btn-sm">Book Free Consultation</a>
+    </div>
+    <button id="burger-btn" class="burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<div id="mobile-menu">
+  <div class="mm-top">
+    <a href="/" class="brand"><img src="/images/icon.png" width="26" height="26" alt="AuditVerse AI"><span class="brand-word" style="display:block">AuditVerse<b>AI</b></span></a>
+    <button id="mm-close" class="mm-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <a href="/">Home</a><div class="mm-group"><a href="#" onclick="return false;">Services</a><div class="mm-sub"><a href="/ai-automation">AI Automation</a><a href="/erp-automation">ERP Automation</a><a href="/internal-audit">Internal Audit</a><a href="/accounting-bookkeeping">Accounting & Bookkeeping</a><a href="/bi-dashboards">BI Dashboards</a></div></div><a href="/industries">Industries</a><div class="mm-group"><a href="#" onclick="return false;">Company</a><div class="mm-sub"><a href="/about">About Us</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a></div></div><a href="/pricing">Pricing</a><a href="/contact">Contact</a>
+  <a href="/contact" class="btn btn-gold btn-block" style="margin-top:22px;">Book Free Consultation</a>
+</div>
+
+<slot />
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="/" class="brand" style="margin-bottom:16px;"><img src="/images/icon.png" width="26" height="26" alt="AuditVerse AI"><span class="brand-word" style="display:block">AuditVerse<b>AI</b></span></a>
+        <p style="font-size:14px;line-height:1.7;max-width:280px;margin-bottom:20px;">AI-powered audit, accounting, ERP automation and business intelligence for ambitious companies — founded and led by Chartered Accountancy expertise.</p>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5.9 5.9 0 0 1 16 8Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V6.5c0-.8.6-1.5 1.5-1.5H17V2h-2.5A4.5 4.5 0 0 0 10 6.5V9H7v3h3v10h4V12h2.8l.6-3H14Z"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.7 10.1L4.4 20H7l5.9-5.4L17.8 20H21l-8-10.5L19.6 4H17l-5.4 5-4.2-5Z"/></svg></a>
+          <a href="mailto:danishazeemofficial@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="/ai-automation">AI Automation</a><a href="/erp-automation">ERP Automation</a><a href="/internal-audit">Internal Audit</a><a href="/accounting-bookkeeping">Accounting & Bookkeeping</a><a href="/bi-dashboards">BI Dashboards</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="/about">About Us</a><a href="/careers">Careers</a><a href="/case-studies">Case Studies</a><a href="/blog">Insights & Blog</a>
+        <a href="/industries">Industries</a>
+      </div>
+      <div class="foot-col">
+        <h5>Resources</h5>
+        <a href="/pricing">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/case-studies">Case Studies</a>
+        <a href="/contact">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="tel:+923089226026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1h2a2 2 0 0 1 2 1.7c.1 1.2.4 2.5.8 3.6a2 2 0 0 1-.5 2.1L7.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c1.1.4 2.4.7 3.6.8a2 2 0 0 1 1.9 2Z"/></svg><span>+92 308-9226026</span></a>
+        <a href="mailto:danishazeemofficial@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><span>danishazeemofficial@gmail.com</span></a>
+        <a href="/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Johar Town, Lahore, Pakistan</span></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AuditVerse AI. All rights reserved. Founded by Danish Azeem, CA (Finalist).</span>
+      <span style="display:flex;gap:18px;">
+        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div id="chat-window">
+  <div class="chat-head">
+    <div class="dot"></div>
+    <div><strong>AuditVerse Assistant</strong><span>AI-powered · replies instantly</span></div>
+    <button id="chat-close" class="chat-close-btn" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div id="chat-body">
+    <div class="chat-msg bot">Hi! I'm the AuditVerse AI assistant. Ask me about automation, audit, ERP or pricing.</div>
+  </div>
+  <form id="chat-form"><input type="text" placeholder="Type your question…" required><button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button></form>
+</div>
+
+<div id="wa-window">
+  <div class="wa-head">
+    <div class="wa-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.6 6.3A8.4 8.4 0 0 0 4 16.4L3 21l4.7-1a8.4 8.4 0 0 0 12-13.7Z"/><path d="M8.5 8.6c.1-.4.5-.6.9-.5.3 0 .6 0 .8.4l.7 1.5c.1.3.1.6-.1.8l-.5.6c-.1.2-.1.4 0 .6.3.6 1.3 1.7 2.6 2.2.2.1.4.1.6-.1l.5-.6c.2-.2.5-.3.8-.1l1.4.8c.3.2.4.5.3.8-.3.9-1.2 1.5-2.1 1.4-2.7-.3-5.3-2.6-6.1-5.2-.3-.9.1-1.9 1-2.6Z" fill="currentColor" stroke="none"/></svg></div>
+    <div><strong>Chat on WhatsApp</strong><span>Typically replies within 1 hour</span></div>
+    <button id="wa-close" class="chat-close-btn" aria-label="Close WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="wa-body">
+    <div class="chat-msg wa-msg">Hi! Send us a message and we'll reply on WhatsApp.</div>
+  </div>
+  <form id="wa-form"><input type="text" placeholder="Type your message…" required><button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button></form>
+</div>
+
+<div class="fab-col">
+  <button id="chat-toggle" class="fab chat-fab" aria-label="Open chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.6 8.6 0 0 1-3.6-.8L3 21l1.8-5a8.3 8.3 0 0 1-.8-3.6 8.4 8.4 0 1 1 17 0Z"/></svg></button>
+  <button id="wa-toggle" class="fab fab-wa" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.6 6.3A8.4 8.4 0 0 0 4 16.4L3 21l4.7-1a8.4 8.4 0 0 0 12-13.7Z"/><path d="M8.5 8.6c.1-.4.5-.6.9-.5.3 0 .6 0 .8.4l.7 1.5c.1.3.1.6-.1.8l-.5.6c-.1.2-.1.4 0 .6.3.6 1.3 1.7 2.6 2.2.2.1.4.1.6-.1l.5-.6c.2-.2.5-.3.8-.1l1.4.8c.3.2.4.5.3.8-.3.9-1.2 1.5-2.1 1.4-2.7-.3-5.3-2.6-6.1-5.2-.3-.9.1-1.9 1-2.6Z" fill="currentColor" stroke="none"/></svg></button>
+  <button id="back-top" class="fab fab-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+</div>
+<script is:inline src="/js/chat-kb.js"></script>
+<script is:inline src="/js/main.js"></script>
+
+</body>
+</html>

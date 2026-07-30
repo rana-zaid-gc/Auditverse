@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const plans = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    desc: 'For small businesses',
+    monthly: '499',
+    annual: '399',
+    popular: false,
+    btnLabel: 'Get Started',
+    btnClass: 'btn-outline',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`,
+    features: [
+      'Daily bookkeeping automation',
+      'Monthly management accounts',
+      '1 AI Finance Assistant',
+      'Email support (48-hour response)',
+      'Up to 500 transactions/month',
+      'Basic financial dashboard',
+      'Secure cloud hosting',
+    ],
+  },
+  {
+    id: 'professional',
+    name: 'Professional',
+    desc: 'For growing businesses',
+    monthly: '1,499',
+    annual: '1,199',
+    popular: true,
+    btnLabel: 'Get Started',
+    btnClass: 'btn-gold',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>`,
+    features: [
+      'Everything in Starter',
+      'ERP automation (Odoo / SAP / NetSuite)',
+      'Up to 5 AI Bots',
+      'Power BI Dashboard Suite',
+      'Dedicated Engagement Manager',
+      'Up to 5,000 transactions/month',
+      'Workflow automation',
+      'API integrations',
+    ],
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise',
+    desc: 'For multi-entity organisations',
+    monthly: '3,999',
+    annual: '3,299',
+    popular: false,
+    btnLabel: 'Get Started',
+    btnClass: 'btn-outline',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>`,
+    features: [
+      'Everything in Professional',
+      'Unlimited AI Bots',
+      'Internal audit monitoring',
+      'Priority ERP engineering support',
+      '24/7 priority support',
+      'Advanced compliance monitoring',
+      'Multi-company management',
+      '50,000+ monthly transactions',
+    ],
+  },
+  {
+    id: 'custom',
+    name: 'Custom Solutions',
+    desc: 'Tailored to your enterprise needs',
+    monthly: null,
+    annual: null,
+    popular: false,
+    btnLabel: 'Request a Proposal',
+    btnClass: 'btn-outline',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+    features: [
+      'Custom ERP implementation',
+      'Legacy system integration',
+      'AI agent development',
+      'Multi-country compliance',
+      'Dedicated engineering team',
+      'SLA-backed enterprise support',
+      'On-premise deployment',
+      'Unlimited customization',
+    ],
+  },
+];
+
+const compareRows = [
+  { feature: 'AI Bots Included', starter: '1', pro: '5', ent: 'Unlimited', cust: 'Unlimited' },
+  { feature: 'ERP Automation', starter: '—', pro: '✓', ent: '✓', cust: '✓' },
+  { feature: 'BI Dashboards', starter: '—', pro: '✓', ent: '✓', cust: '✓' },
+  { feature: 'Internal Audit Monitoring', starter: '—', pro: '—', ent: '✓', cust: '✓' },
+  { feature: 'Workflow Automation', starter: '—', pro: '✓', ent: '✓', cust: '✓' },
+  { feature: 'API Integrations', starter: '—', pro: '✓', ent: '✓', cust: '✓' },
+  { feature: 'Dedicated Manager', starter: '—', pro: '✓', ent: '✓', cust: '✓' },
+  { feature: 'Priority Support', starter: 'Basic', pro: 'Standard', ent: '24/7', cust: 'SLA-backed' },
+  { feature: 'Compliance Monitoring', starter: '—', pro: '—', ent: '✓', cust: '✓' },
+  { feature: 'Custom AI Development', starter: '—', pro: '—', ent: '—', cust: '✓' },
+  { feature: 'Monthly Transactions', starter: '500', pro: '5,000', ent: '50,000+', cust: 'Unlimited' },
+  { feature: 'Deployment Options', starter: 'Cloud', pro: 'Cloud', ent: 'Cloud + On-premise', cust: 'Full flexibility' },
+];
+---
+
+<BaseLayout
+  title="Pricing | AuditVerse AI"
+  description="Starter, Professional, Enterprise and Custom pricing plans for AI-powered audit, accounting, ERP automation and business intelligence services."
+  canonical="https://www.auditverseai.com/pricing"
+  activePage="pricing"
+>
+
+<section class="page-hero on-dark">
+  <div class="hero-grid-lines"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span><span style="color:var(--white)">Pricing</span></div>
+    <div class="eyebrow">Pricing</div>
+    <h1 style="font-size:clamp(36px,4.6vw,54px);font-weight:800;max-width:820px;color:var(--white);line-height:1.1;">Choose the right plan for your business</h1>
+    <p class="lede" style="margin-top:20px;max-width:680px;">From startups to enterprise organizations, AuditVerseAI provides AI-powered ERP automation, bookkeeping, compliance, and internal audit solutions that scale with your business.</p>
+    <div class="toggle-wrap" style="margin-top:38px;">
+      <span class="mono toggle-lbl" style="font-size:13px;color:var(--white-dim);">Monthly</span>
+      <label class="toggle-track">
+        <input type="checkbox" id="pricing-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="mono toggle-lbl" style="font-size:13px;color:var(--white-dim);">Annual <span class="save-badge">Save 20%</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark" style="padding-top:0;margin-top:-10px;">
+  <div class="wrap">
+    <div class="grid grid-4 price-grid">
+      {plans.map((plan, i) => (
+        <div class:list={['price-card glass reveal', { pop: plan.popular, 'price-card--custom': plan.id === 'custom' }]} style={`--order:${i + 1};`}>
+          {plan.popular && <span class="popular-tag">Most Popular</span>}
+          <div class="price-icon" set:html={plan.icon} />
+          <div class="plan">{plan.desc}</div>
+          <h3>{plan.name}</h3>
+          <div class="cost">
+            {plan.monthly ? (
+              <><span class="mono" data-monthly={plan.monthly} data-annual={plan.annual}>{plan.monthly}</span><span class="price-period">/month</span></>
+            ) : (
+              <span class="cost--custom">Let's Talk</span>
+            )}
+          </div>
+          <a href="/contact" class:list={['btn', 'btn-block', plan.btnClass]} style="margin:22px 0 18px;">{plan.btnLabel}</a>
+          <ul class="list-check">
+            {plan.features.map(f => (
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> {f}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="section-head center" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">Compare Plans</div>
+      <h2 class="headline">What's included, side by side</h2>
+      <div class="accent-bar" style="margin:8px auto 0;"></div>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="col-pro">Professional</th>
+            <th>Enterprise</th>
+            <th>Custom</th>
+          </tr>
+        </thead>
+        <tbody>
+          {compareRows.map(row => (
+            <tr>
+              <td class="tf">{row.feature}</td>
+              <td class="tv">{row.starter}</td>
+              <td class="tv col-pro">{row.pro}</td>
+              <td class="tv">{row.ent}</td>
+              <td class="tv">{row.cust}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="cta-premium reveal">
+      <div class="cta-premium-bg"></div>
+      <h2 class="headline" style="position:relative;z-index:1;max-width:700px;">Ready to automate your finance and audit operations?</h2>
+      <p class="lede" style="margin-top:16px;position:relative;z-index:1;max-width:580px;">Book a free consultation with our experts and discover how AI-powered ERP automation can transform your business.</p>
+      <div class="hero-actions" style="justify-content:center;margin-top:32px;position:relative;z-index:1;">
+        <a href="/contact" class="btn btn-gold">Book Free Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn btn-outline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
