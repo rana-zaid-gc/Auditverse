@@ -52,6 +52,15 @@ const ogImage = `${siteUrl}/images/icon.png`;
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<style is:inline>
+#loader{position:fixed;inset:0;z-index:9999;background:var(--navy-950);display:flex;align-items:center;justify-content:center;transition:opacity .6s var(--ease),visibility .6s}
+#loader.hide{opacity:0;visibility:hidden}
+.loader-mark{width:64px;height:64px;position:relative}
+.loader-mark svg{width:100%;height:100%}
+.loader-ring{stroke-dasharray:180;stroke-dashoffset:180;animation:loaderdraw 1.4s ease-in-out infinite}
+@keyframes loaderdraw{50%{stroke-dashoffset:0}100%{stroke-dashoffset:-180}}
+:root[data-theme="light"] #loader{background:#fff}
+</style>
 </head>
 <body>
 
