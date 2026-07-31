@@ -1,8 +1,5 @@
 {
   "buildCommand": "npx astro build",
   "outputDirectory": "dist",
-  "framework": "astro",
-  "functions": {
-    "api/*.js": { "runtime": "nodejs@20.x" }
-  }
+  "framework": "astro"
 }
