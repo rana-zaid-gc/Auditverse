@@ -43,7 +43,7 @@ window.AV_KB = [
     category: "founder",
     keywords: ["zaid","rana","rana zaid","rana muhammad zaid","co-founder","ai engineer","erp engineer","devops","computer science","automation engineer"],
     q: ["who is rana muhammad zaid","tell me about zaid","who is zaid","what does zaid do"],
-    a: "Rana Muhammad Zaid is the Co-Founder and AI / ERP Automation Engineer at AuditVerseAI. He is a Computer Science graduate specializing in AI automation, DevOps, ERP implementation, cloud infrastructure, and business process automation. He has experience deploying enterprise applications using Docker, Jenkins, Linux, GitHub Actions, and AWS while implementing Odoo ERP solutions. His goal is to help businesses replace repetitive manual work with intelligent automation and scalable cloud technologies."
+    a: "Rana Muhammad Zaid is the Co-Founder at AuditVerseAI. He is a Computer Science graduate specializing in AI automation, DevOps, ERP implementation, cloud infrastructure, and business process automation. He has experience deploying enterprise applications using Docker, Jenkins, Linux, GitHub Actions, and AWS while implementing Odoo ERP solutions. His goal is to help businesses replace repetitive manual work with intelligent automation and scalable cloud technologies."
   },
   {
     id: "founder-zaid-expertise",
@@ -57,7 +57,7 @@ window.AV_KB = [
     category: "founder",
     keywords: ["danish","muhammad danish azeem","danish azeem","co-founder","ca finalist","chartered accountant","audit","finance consultant","founder","ceo","who started","who founded","leader","owner","background","profile","qualification"],
     q: ["who is muhammad danish azeem","tell me about danish","who is danish azeem","what are danish's qualifications","who founded auditverse"],
-    a: "Muhammad Danish Azeem is the Co-Founder and Audit & Finance Consultant at AuditVerseAI. He is a CA Finalist with over four years of experience in Audit, Assurance, Financial Reporting, Internal Controls, ERP-based Accounting, and Financial Management. He has worked with organizations across manufacturing, healthcare, education, FMCG, telecom, media, and trading industries while leading audit engagements, preparing financial statements, strengthening internal controls, and implementing accounting best practices."
+    a: "Muhammad Danish Azeem is the Founder and CEO at AuditVerseAI. He is a CA Finalist with over four years of experience in Audit, Assurance, Financial Reporting, Internal Controls, ERP-based Accounting, and Financial Management. He has worked with organizations across manufacturing, healthcare, education, FMCG, telecom, media, and trading industries while leading audit engagements, preparing financial statements, strengthening internal controls, and implementing accounting best practices."
   },
   {
     id: "founder-danish-expertise",
@@ -71,7 +71,7 @@ window.AV_KB = [
     category: "founder",
     keywords: ["founders","co-founders","who founded","who started","team behind","leadership","management"],
     q: ["who founded auditverse ai","who are the founders","tell me about the founders","who started the company"],
-    a: "AuditVerseAI was founded by Rana Muhammad Zaid (Co-Founder & AI/ERP Automation Engineer) and Muhammad Danish Azeem (Co-Founder & Audit/Finance Consultant). Together, they combine deep financial expertise with AI-powered automation and enterprise ERP implementation to deliver solutions that help organizations improve efficiency, strengthen compliance, and accelerate digital transformation."
+    a: "AuditVerseAI was founded by Rana Muhammad Zaid (Co-Founder) and Muhammad Danish Azeem (Founder & CEO). Together, they combine deep financial expertise with AI-powered automation and enterprise ERP implementation to deliver solutions that help organizations improve efficiency, strengthen compliance, and accelerate digital transformation."
   },
 
   // ── Services (What We Do) ──
